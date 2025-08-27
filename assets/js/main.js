@@ -14,6 +14,23 @@
 		$main = $('#main'),
 		$main_articles = $main.children('article');
 
+var nodesjs = new NodesJs({
+    // container ID
+    id: 'bg',
+    // width
+    width: window.innerWidth,
+    // height
+    height: window.innerHeight,
+    // background transition options
+    backgroundFrom: [0, 24, 48],
+    backgroundTo: [0, 33, 62],
+    backgroundDuration: 20000,
+    // the number of particles
+    number: window.hasOwnProperty('orientation') ? 30: 100,
+    // animation speed
+    speed: 20,
+    backgroundColor: 'black'
+});
 	// Breakpoints.
 		breakpoints({
 			xlarge:   [ '1281px',  '1680px' ],
