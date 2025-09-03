@@ -1,1 +1,0 @@
-# gb-company-webpage
