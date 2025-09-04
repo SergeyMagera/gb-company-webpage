@@ -1708,20 +1708,16 @@ section,
   border-radius: 4px;
   transition: 0.5s;
   background: color-mix(in srgb, var(--background-color), transparent 60%);
-  z-index: 2;
+  z-index: 500;
+  padding: 12px;
+  cursor: pointer;
 }
 
 .team .team-member .social a {
   transition: color 0.3s;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  margin: 15px 12px;
   display: block;
   line-height: 0;
   text-align: center;
-}
-
-.team .team-member .social a:hover {
-  color: var(--default-color);
 }
 
 .team .team-member .social i {
