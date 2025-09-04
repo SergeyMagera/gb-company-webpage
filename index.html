@@ -195,6 +195,7 @@
                 <div class="text-center text-lg-start">
                   <a
                     href="#"
+                    id="whoweare"
                     class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center"
                   >
                     <span>Read More</span>
@@ -209,7 +210,12 @@
               data-aos="zoom-out"
               data-aos-delay="200"
             >
-              <img src="assets/img/about.jpg" class="img-fluid" style="margin-left: 48px;" alt="" />
+              <img
+                src="assets/img/about.jpg"
+                class="img-fluid"
+                style="margin-left: 48px"
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -422,7 +428,7 @@
         </div>
         <!-- End Section Title -->
 
-        <div class="container">
+        <div class="container" id="our-services-cards">
           <div class="row gy-4">
             <div
               class="col-lg-4 col-md-6"
@@ -444,7 +450,6 @@
             </div>
             <!-- End Service Item -->
 
-            
             <div
               class="col-lg-4 col-md-6"
               data-aos="fade-up"
@@ -465,7 +470,7 @@
             </div>
             <!-- End Service Item -->
 
-             <div
+            <div
               class="col-lg-4 col-md-6"
               data-aos="fade-up"
               data-aos-delay="200"
@@ -545,7 +550,6 @@
               </div>
             </div>
             <!-- End Service Item -->
-
           </div>
         </div>
       </section>
@@ -821,8 +825,6 @@
           </div> -->
           </div>
         </div>
-
-        <div id="showmeservice">Show</div>
       </section>
       <!-- /Team Section -->
 
@@ -968,7 +970,7 @@
 
     <!-- About Luca Modal -->
     <div
-      class="modal fade about-luca-modal"
+      class="modal fade about-luca-modal shared-dialog"
       id="aboutLucaModal"
       tabindex="-1"
       aria-labelledby="aboutLucaModalLabel"
@@ -1090,7 +1092,75 @@
           <div class="modal-footer">
             <a
               href="#"
-              class="btn-contact-about"
+              class="btn-contact btn-contact-about"
+              data-bs-dismiss="modal"
+              onclick="scrollToBottom()"
+            >
+              Get in Touch
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Who We Are Modal -->
+    <div
+      class="modal fade who-we-are-modal shared-dialog"
+      id="whoWeAreModal"
+      tabindex="-1"
+      aria-labelledby="whoWeAreModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="bi bi-x"></i>
+            </button>
+            <h2 id="whoWeAreModalLabel">Who We Are</h2>
+          </div>
+          <div class="modal-body">
+            <div class="about-content-container">
+              <img
+                src="assets/img/about.jpg"
+                class="about-image"
+                alt="MCND Consulting"
+              />
+              <div class="about-text">
+                <p>
+                  We are a consulting and technology partner, dedicated to the
+                  energy sector and specialized in delivering actionable
+                  insights and strategic advice for the evolving energy sector.
+                  We help businesses navigate complex markets, support in
+                  industry changes and challenges, optimize performance and
+                  embrace digital transformation.
+                </p>
+                <p>
+                  Our expertise spans across gas, LNG, and power markets,
+                  providing comprehensive solutions that drive growth and
+                  efficiency in the energy industry. We combine deep market
+                  knowledge with cutting-edge technology to deliver results that
+                  matter.
+                </p>
+                <p>
+                  At MCND Consulting OÜ, we believe in building lasting
+                  partnerships with our clients, understanding their unique
+                  challenges, and providing tailored solutions that create
+                  sustainable value in an ever-changing energy landscape.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a
+              href="#"
+              class="btn-contact btn-contact-who-we-are"
               data-bs-dismiss="modal"
               onclick="scrollToBottom()"
             >
@@ -1207,7 +1277,7 @@
 
     <!-- Services Modal -->
     <div
-      class="modal fade services-modal"
+      class="modal fade services-modal shared-dialog"
       id="servicesModal"
       tabindex="-1"
       aria-labelledby="servicesModalLabel"
@@ -1409,7 +1479,7 @@
           <div class="modal-footer">
             <a
               href="#"
-              class="btn-contact-services"
+              class="btn-contact btn-contact-services"
               data-bs-dismiss="modal"
               onclick="scrollToBottom()"
             >
@@ -1423,6 +1493,147 @@
 
     <!-- Services Modal Styles -->
     <style>
+      /* Shared Dialog Styles */
+      .shared-dialog .modal-content {
+        border-radius: 12px;
+        border: none;
+        overflow: hidden;
+      }
+
+      .shared-dialog .modal-header {
+        background: linear-gradient(
+          135deg,
+          var(--accent-color),
+          color-mix(in srgb, var(--accent-color), transparent 20%)
+        );
+        color: var(--contrast-color);
+        border: none;
+        padding: 30px 60px 30px 30px;
+        position: relative;
+      }
+
+      .shared-dialog .modal-header h2 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--contrast-color);
+      }
+
+      .shared-dialog .modal-header .subtitle {
+        margin: 0;
+        font-size: 16px;
+        opacity: 0.9;
+        font-weight: 400;
+      }
+
+      .shared-dialog .btn-close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        background: transparent;
+        border: none;
+        color: var(--contrast-color);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        opacity: 0.8;
+      }
+
+      .shared-dialog .btn-close:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.1);
+        opacity: 1;
+      }
+
+      .shared-dialog .modal-body {
+        padding: 40px;
+        background: var(--contrast-color);
+        max-height: 70vh;
+        overflow-y: auto;
+      }
+
+      .shared-dialog .modal-footer {
+        padding: 30px 40px;
+        background: color-mix(in srgb, var(--default-color), transparent 95%);
+        border: none;
+        text-align: center;
+      }
+
+      .shared-dialog .btn-contact {
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 30px;
+        background: var(--accent-color);
+        color: var(--contrast-color);
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid var(--accent-color);
+      }
+
+      .shared-dialog .btn-contact:hover {
+        background: transparent;
+        color: var(--accent-color);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px
+          color-mix(in srgb, var(--accent-color), transparent 70%);
+      }
+
+      .shared-dialog .btn-contact i {
+        margin-left: 8px;
+      }
+
+      /* Shared Dialog Responsive Design */
+      @media (max-width: 768px) {
+        .shared-dialog .modal-header {
+          padding: 20px 50px 20px 20px;
+        }
+
+        .shared-dialog .modal-header h2 {
+          font-size: 24px;
+          margin: 0;
+        }
+
+        .shared-dialog .btn-close {
+          top: 20px;
+          right: 20px;
+        }
+
+        .shared-dialog .modal-body {
+          padding: 20px;
+        }
+
+        .shared-dialog .modal-footer {
+          padding: 20px;
+        }
+      }
+
+      /* Shared Dialog Custom Scrollbar */
+      .shared-dialog .modal-body::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .shared-dialog .modal-body::-webkit-scrollbar-track {
+        background: color-mix(in srgb, var(--default-color), transparent 90%);
+        border-radius: 3px;
+      }
+
+      .shared-dialog .modal-body::-webkit-scrollbar-thumb {
+        background: var(--accent-color);
+        border-radius: 3px;
+      }
+
+      .shared-dialog .modal-body::-webkit-scrollbar-thumb:hover {
+        background: color-mix(in srgb, var(--accent-color), transparent 20%);
+      }
+
       /* Custom Services Modal Styles */
       .services-modal .modal-content {
         border-radius: 12px;
@@ -1955,6 +2166,308 @@
       .about-luca-modal .modal-body::-webkit-scrollbar-thumb:hover {
         background: color-mix(in srgb, var(--accent-color), transparent 20%);
       }
+
+      /* Who We Are Modal Styles */
+      .who-we-are-modal .modal-content {
+        border-radius: 12px;
+        border: none;
+        overflow: hidden;
+      }
+
+      .who-we-are-modal .modal-header {
+        background: linear-gradient(
+          135deg,
+          var(--accent-color),
+          color-mix(in srgb, var(--accent-color), transparent 20%)
+        );
+        color: var(--contrast-color);
+        border: none;
+        padding: 30px 60px 30px 30px;
+        position: relative;
+      }
+
+      .who-we-are-modal .modal-header h2 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--contrast-color);
+      }
+
+      .who-we-are-modal .modal-header .subtitle {
+        margin: 0;
+        font-size: 16px;
+        opacity: 0.9;
+        font-weight: 400;
+      }
+
+      .who-we-are-modal .btn-close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        background: transparent;
+        border: none;
+        color: var(--contrast-color);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        opacity: 0.8;
+      }
+
+      .who-we-are-modal .btn-close:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.1);
+        opacity: 1;
+      }
+
+      .who-we-are-modal .modal-body {
+        padding: 40px;
+        background: var(--contrast-color);
+        max-height: 70vh;
+        overflow-y: auto;
+      }
+
+      .who-we-are-modal .service-section {
+        margin-bottom: 40px;
+        padding: 30px;
+        background: color-mix(in srgb, var(--default-color), transparent 98%);
+        border-radius: 12px;
+        border-left: 4px solid var(--accent-color);
+        transition: all 0.3s ease;
+      }
+
+      .who-we-are-modal .service-section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px
+          color-mix(in srgb, var(--accent-color), transparent 85%);
+      }
+
+      .who-we-are-modal .service-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .who-we-are-modal .service-icon {
+        font-size: 24px;
+        color: var(--accent-color);
+        margin-right: 15px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: color-mix(in srgb, var(--accent-color), transparent 90%);
+        border-radius: 8px;
+      }
+
+      .who-we-are-modal .service-section h3 {
+        color: var(--heading-color);
+        font-size: 22px;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .who-we-are-modal .service-section p {
+        color: color-mix(in srgb, var(--default-color), transparent 20%);
+        line-height: 1.7;
+        margin-bottom: 20px;
+      }
+
+      .who-we-are-modal .projects-section {
+        background: color-mix(in srgb, var(--accent-color), transparent 95%);
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+
+      .who-we-are-modal .projects-section h4 {
+        color: var(--accent-color);
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .who-we-are-modal .projects-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .who-we-are-modal .projects-list li {
+        padding: 8px 0;
+        color: color-mix(in srgb, var(--default-color), transparent 20%);
+        position: relative;
+        padding-left: 20px;
+        line-height: 1.6;
+      }
+
+      .who-we-are-modal .projects-list li::before {
+        content: "•";
+        color: var(--accent-color);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+
+      .who-we-are-modal .modal-footer {
+        padding: 30px 40px;
+        background: color-mix(in srgb, var(--default-color), transparent 95%);
+        border: none;
+        text-align: center;
+      }
+
+      .who-we-are-modal .btn-contact-who-we-are {
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 30px;
+        background: var(--accent-color);
+        color: var(--contrast-color);
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid var(--accent-color);
+      }
+
+      .who-we-are-modal .btn-contact-who-we-are:hover {
+        background: transparent;
+        color: var(--accent-color);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px
+          color-mix(in srgb, var(--accent-color), transparent 70%);
+      }
+
+      .who-we-are-modal .btn-contact-who-we-are i {
+        margin-left: 8px;
+      }
+
+      /* Who We Are Modal Responsive Design */
+      @media (max-width: 768px) {
+        .who-we-are-modal .modal-header {
+          padding: 20px 50px 20px 20px;
+        }
+
+        .who-we-are-modal .modal-header h2 {
+          font-size: 24px;
+          margin: 0;
+        }
+
+        .who-we-are-modal .btn-close {
+          top: 20px;
+          right: 20px;
+        }
+
+        .who-we-are-modal .modal-body {
+          padding: 20px;
+        }
+
+        .who-we-are-modal .service-section {
+          padding: 20px;
+          margin-bottom: 30px;
+        }
+
+        .who-we-are-modal .service-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+
+        .who-we-are-modal .service-icon {
+          margin-right: 0;
+        }
+
+        .who-we-are-modal .modal-footer {
+          padding: 20px;
+        }
+      }
+
+      /* Who We Are Modal About Content Styles */
+      .who-we-are-modal .about-content-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 40px;
+        margin-bottom: 20px;
+      }
+
+      .who-we-are-modal .about-image {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 12px;
+        flex-shrink: 0;
+        box-shadow: 0 8px 25px
+          color-mix(in srgb, var(--default-color), transparent 80%);
+      }
+
+      .who-we-are-modal .about-text {
+        flex: 1;
+      }
+
+      .who-we-are-modal .about-text p {
+        margin-bottom: 20px;
+        line-height: 1.7;
+        color: color-mix(in srgb, var(--default-color), transparent 20%);
+        font-size: 16px;
+      }
+
+      .who-we-are-modal .about-text p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Who We Are Modal Responsive Design for About Content */
+      @media (max-width: 992px) {
+        .who-we-are-modal .about-content-container {
+          flex-direction: column;
+          text-align: center;
+          gap: 30px;
+        }
+
+        .who-we-are-modal .about-image {
+          width: 250px;
+          height: 250px;
+          margin: 0 auto;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .who-we-are-modal .about-content-container {
+          gap: 20px;
+        }
+
+        .who-we-are-modal .about-image {
+          width: 200px;
+          height: 200px;
+        }
+
+        .who-we-are-modal .about-text p {
+          font-size: 15px;
+        }
+      }
+
+      /* Who We Are Modal Custom Scrollbar */
+      .who-we-are-modal .modal-body::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .who-we-are-modal .modal-body::-webkit-scrollbar-track {
+        background: color-mix(in srgb, var(--default-color), transparent 90%);
+        border-radius: 3px;
+      }
+
+      .who-we-are-modal .modal-body::-webkit-scrollbar-thumb {
+        background: var(--accent-color);
+        border-radius: 3px;
+      }
+
+      .who-we-are-modal .modal-body::-webkit-scrollbar-thumb:hover {
+        background: color-mix(in srgb, var(--accent-color), transparent 20%);
+      }
     </style>
 
     <!-- Services Modal JavaScript -->
@@ -2001,6 +2514,46 @@
           behavior: "smooth",
         });
       }
+
+      // Function to show Who We Are modal
+      function showWhoWeAreModal() {
+        const whoWeAreModal = new bootstrap.Modal(
+          document.getElementById("whoWeAreModal")
+        );
+        whoWeAreModal.show();
+      }
+
+      // Initialize AOS when Who We Are modal is shown
+      document
+        .getElementById("whoWeAreModal")
+        .addEventListener("shown.bs.modal", function () {
+          AOS.refresh();
+        });
+
+      // Add click event listener for whoweare element
+      document.addEventListener("DOMContentLoaded", function () {
+        const whoWeAreElement = document.getElementById("whoweare");
+        if (whoWeAreElement) {
+          whoWeAreElement.addEventListener("click", function (e) {
+            e.preventDefault();
+            showWhoWeAreModal();
+          });
+        }
+
+        // Add click event listeners for service cards
+        const serviceCards = document.querySelectorAll(
+          "#our-services-cards .read-more"
+        );
+        serviceCards.forEach(function (card) {
+          card.addEventListener("click", function (e) {
+            e.preventDefault();
+            const servicesModal = new bootstrap.Modal(
+              document.getElementById("servicesModal")
+            );
+            servicesModal.show();
+          });
+        });
+      });
     </script>
   </body>
 </html>
