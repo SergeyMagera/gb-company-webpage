@@ -2867,8 +2867,13 @@ section,
   letter-spacing: 0.1px;
   line-height: 1.6;
 
+  .btn-close {
+    position: absolute;
+    right: 0;
+    top: 8px;
+  }
+
   img {
-    border-radius: 12px;
     margin-right: 1.75rem;
   }
 
@@ -2884,8 +2889,18 @@ section,
     border-bottom: 2px solid var(--heading-color);
   }
 
+  h3 {
+    border-bottom: 2px solid var(--heading-color);
+    padding-bottom: 0.5rem;
+  }
+
   ul li {
     color: var(--text-secondary);
-    padding-left: 0;
+    /* padding-left: 0; */
+  }
+
+  table td {
+    vertical-align: middle;
+    color: var(--text-secondary);
   }
 }
