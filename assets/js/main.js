@@ -5,6 +5,45 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+// document.addEventListener('DOMContentLoaded', function() {
+//     const openPopupBtn = document.getElementById('openPopupBtn');
+//     const articlePopup = document.getElementById('articlePopup');
+//     const closeBtn = articlePopup.querySelector('.close-btn');
+
+//     openPopupBtn.onclick = function() {
+//         articlePopup.style.display = 'block';
+//     }
+
+//     closeBtn.onclick = function() {
+//         articlePopup.style.display = 'none';
+//     }
+
+//     // Close the popup if the user clicks outside of the content
+//     window.onclick = function(event) {
+//         if (event.target == articlePopup) {
+//             articlePopup.style.display = 'none';
+//         }
+//     }
+// });
+
+function showArticle(id) {
+  console.log(id);
+    const articlePopup = document.getElementById(id);
+    console.log(articlePopup);
+    const closeBtn = articlePopup.querySelector('.close-btn');
+    articlePopup.style.display = 'block';
+
+    closeBtn.onclick = function() {
+        articlePopup.style.display = 'none';
+    }
+
+    // Close the popup if the user clicks outside of the content
+    window.onclick = function(event) {
+        if (event.target == articlePopup) {
+            articlePopup.style.display = 'none';
+        }
+    }
+}
 
 (function() {
   "use strict";

@@ -2765,3 +2765,80 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
+
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    z-index: 1000;
+}
+
+.popup ul {
+  margin-bottom: 1rem;
+}
+
+.popup > ul > li {
+  margin-bottom: 0.5rem;
+}
+
+.popup-content {
+    background-color: #fefefe;
+    /* margin: 15% auto; */
+    /* margin-block: auto; */
+    margin-inline: auto;
+    margin-top: 40px;
+    padding: 20px;
+    border: 1px solid transparent;
+    border-radius: 0.5em;
+    width: 850px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: auto;
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ .team-tember-about-container {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+    .team-tember-about-container img {
+      max-width: 200px; /* adjust size */
+      margin-right: 1rem;
+    }
+    .team-tember-about-text {
+      flex: 1;
+    }
+    .team-tember-about-full-width {
+      clear: both; /* ensures it goes below the image */
+    }
+
+
+    #AboutLuca {
+      font-size: 16px;
+
+      h2 {
+        margin-bottom: 0.8rem;
+      }
+    }
