@@ -1,0 +1,73 @@
+---
+import AboutLukaModal from './modals/about-luka-modal.astro';
+---
+
+<div class="container section-title" data-aos="fade-up">
+          <h2>Team</h2>
+          <p>Our hard working team</p>
+        </div>
+      
+        <div class="container">
+          <div class="row gy-4">
+            <div
+                    class="col-lg-3 col-md-6 d-flex align-items-stretch"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+            >
+              <div class="team-member" id="lukaCard">
+                <div class="member-img">
+                  <img
+                          src="/src/assets/img/team/team-1.jpg"
+                          class="img-fluid"
+                          alt=""
+                  />
+                  <div id="lukaSocialsOverlay" class="social">
+                    <a
+                            href="https://www.linkedin.com/in/luca-p-6142691"
+                            target="_blank"
+                            id="lukaLinkedInHref"
+                            class="text-accent"
+                    >
+                      <i class="bi bi-linkedin fs-3"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Luca Palmeri</h4>
+                  <span>Chief Executive Officer</span>
+                  <p>
+                    Seasoned energy professional and entrepreneur with over 22
+                    years of international experience across gas, LNG, and power
+                    markets. As the founder and CEO of MCND Consulting OÜ, Luca
+                    brings a unique blend of technical expertise and commercial
+                    acumen, having held senior roles in leading energy companies
+                    and startups.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <AboutLukaModal/>
+
+<script>
+    document.getElementById("lukaCard")?.addEventListener("click", function() {
+        const aboutLucaModal = new bootstrap.Modal(
+                document.getElementById("aboutLucaModal")
+                );
+                aboutLucaModal.show();
+    });
+
+     // Initialize AOS when About Luca modal is shown
+      document.getElementById("aboutLucaModal")?.addEventListener("shown.bs.modal", function () {
+          AOS.refresh();
+        });
+
+        document
+          .getElementById("lukaSocialsOverlay")?.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            document.getElementById("lukaLinkedInHref")?.click();
+          });
+</script>
