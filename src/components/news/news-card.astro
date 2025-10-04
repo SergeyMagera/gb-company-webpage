@@ -1,0 +1,54 @@
+---
+interface Props {
+  title: string;
+  date: string;
+  tags: string[];
+  content: string;
+  image: string;
+  link: string;
+  author: string;
+}
+
+const { title, date, tags, content, image, link, author } = Astro.props;
+---
+
+<div class="container my-4">
+  <div class="row g-4">
+    <div class="col-12">
+      <div class="card shadow-sm">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              class="card-img-left img-fluid rounded-start h-100 w-100 object-fit-cover"
+              src={image}
+              alt="News Card"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{title}</h5>
+              <p class="text-muted small mb-2">
+                <i class="bi bi-calendar"></i>
+                {date} by <strong>{author}</strong>
+              </p>
+              <div class="mb-2">
+                {
+                  tags.map((tag) => (
+                    <span class="badge bg-dark me-1">{tag}</span>
+                  ))
+                }
+              </div>
+              <p class="card-text">
+                {content}
+              </p>
+              <a href={link} class="stretched-link text-decoration-none">
+                Read More →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

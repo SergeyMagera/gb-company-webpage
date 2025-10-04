@@ -50,28 +50,20 @@ import Header from "../components/header.astro";
 		<slot/>
 	</main>
     <!-- Vendor JS Files -->
-    <script src="/src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" is:global></script>
-    <script src="/src/assets/vendor/php-email-form/validate.js" is:global></script>
-    <script src="/src/assets/vendor/aos/aos.js" is:global></script>
-    <script src="/src/assets/vendor/glightbox/js/glightbox.min.js" is:global></script>
-    <script src="/src/assets/vendor/purecounter/purecounter_vanilla.js" is:global></script>
-    <script src="/src/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" is:global></script>
-    <script src="/src/assets/vendor/isotope-layout/isotope.pkgd.min.js" is:global></script>
-    <script src="/src/assets/vendor/swiper/swiper-bundle.min.js" is:global></script>
+    <script src="/src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" is:inline></script>
+    <script src="/src/assets/vendor/php-email-form/validate.js" is:inline></script>
+    <script src="/src/assets/vendor/aos/aos.js" is:inline></script>
+    <script src="/src/assets/vendor/glightbox/js/glightbox.min.js" is:inline></script>
+    <script src="/src/assets/vendor/purecounter/purecounter_vanilla.js" is:inline></script>
+    <script src="/src/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" is:inline></script>
+    <script src="/src/assets/vendor/isotope-layout/isotope.pkgd.min.js" is:inline></script>
+    <script src="/src/assets/vendor/swiper/swiper-bundle.min.js" is:inline></script>
 
     <!-- Main JS File -->
-    <script src="/src/assets/js/main.js"></script>
+    <!-- <script src="/src/assets/js/main.js" is:inline></script> -->
 
     <!-- Services Modal JavaScript -->
-    <script is:global>
-      // Initialize AOS when modal is shown
-      document
-        .getElementById("servicesModal")
-        .addEventListener("shown.bs.modal", function () {
-          AOS.refresh();
-        });
-
-
+    <script is:inline>
       // Function to scroll to bottom of page
       function scrollToBottom() {
         window.scrollTo({
