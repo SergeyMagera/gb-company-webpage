@@ -1,0 +1,86 @@
+---
+import WhoWeAreModal from './modals/who-we-are-modal.astro';
+--- 
+ 
+ <div class="container" data-aos="fade-up">
+          <div class="row gx-0">
+            <div
+                    class="col-lg-6 d-flex flex-column justify-content-center"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+            >
+              <div class="content">
+                <h3>Who We Are</h3>
+                <h2>Introduction MCND Consulting OÜ</h2>
+                <p>
+                  We are a consulting and technology partner, dedicated to the
+                  energy sector and specialized in delivering actionable
+                  insights and strategic advice for the evolving energy sector.
+                  We help businesses navigate complex markets, support in
+                  industry changes and challenges, optimize performance and
+                  embrace digital
+                </p>
+                <div class="text-center text-lg-start">
+                  <a
+                          href="#"
+                          id="whoweare"
+                          class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center"
+                  >
+                    <span>Read More</span>
+                    <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div
+                    class="col-lg-6 d-flex align-items-center"
+                    data-aos="zoom-out"
+                    data-aos-delay="200"
+            >
+              <img
+                      src="/src/assets/img/about.jpg"
+                      class="img-fluid"
+                      style="margin-left: 48px"
+                      alt=""
+              />
+            </div>
+          </div>
+
+          <WhoWeAreModal/>
+        </div>
+
+
+
+        <script>
+            // Function to show Who We Are modal
+      function showWhoWeAreModal() {
+        const whoWeAreModal = new bootstrap.Modal(
+          document.getElementById("whoWeAreModal")
+        );
+        whoWeAreModal.show();
+      }
+
+      // Initialize AOS when Who We Are modal is shown
+      document
+        .getElementById("whoWeAreModal")?.addEventListener("shown.bs.modal", function () {
+          AOS.refresh();
+        });
+
+      // Add click event listener for whoweare element
+      
+        window.addEventListener("DOMContentLoaded", function () {
+          const whoWeAreElement = document.getElementById("whoweare");
+        if (whoWeAreElement) {
+          whoWeAreElement.addEventListener("click", function (e) {
+            e.preventDefault();
+            showWhoWeAreModal();
+          });
+        }
+        });
+        </script>
+
+
+<style>
+    
+</style>

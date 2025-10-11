@@ -1,0 +1,144 @@
+---
+import ServicesModal from './modals/services-modal.astro';
+---
+
+<div class="container section-title" data-aos="fade-up">
+          <h2>Services</h2>
+          <p>Check Our Services<br /></p>
+        </div>
+        
+
+        <div class="container" id="our-services-cards">
+          <div class="row gy-4">
+            <div
+                    class="col-lg-4 col-md-6"
+                    data-aos="fade-up"
+                    data-aos-delay="500"
+            >
+              <div class="service-item item-indigo position-relative">
+                <i class="bi bi bi-motherboard icon"></i>
+                <h3>Digital solution</h3>
+                <p>
+                  We design and implement IT systems that enable smarter
+                  workflows, seamless digitalization and data-driven decision
+                  support.
+                </p>
+                <a href="#" class="read-more stretched-link"
+                ><span>Read More</span> <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <div
+                    class="col-lg-4 col-md-6"
+                    data-aos="fade-up"
+                    data-aos-delay="600"
+            >
+              <div class="service-item item-pink position-relative">
+                <i class="bi bi-person-video3 icon"></i>
+                <h3>Smart Decision Support</h3>
+                <p>
+                  Our solutions turn complex data into actionable insights,
+                  helping energy companies make better choices, faster and with
+                  greater confidence.
+                </p>
+                <a href="#" class="read-more stretched-link"
+                ><span>Read More</span> <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <div
+                    class="col-lg-4 col-md-6"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+            >
+              <div class="service-item item-orange position-relative">
+                <i class="bi bi-lightbulb icon"></i>
+                <h3>Empowering the energy industry with Smart Solutions</h3>
+                <p>
+                  We help energy companies unlock new value through strategic
+                  consulting and advanced digital solutions. By combining deep
+                  industry expertise with cutting-edge IT, we deliver
+                  data-driven decision supports that make operations smarter,
+                  quicker and future-ready.
+                </p>
+                <a href="#" class="read-more stretched-link"
+                ><span>Read More</span> <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <div
+                    class="col-lg-4 col-md-6"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+            >
+              <div class="service-item item-teal position-relative">
+                <i class="bi bi bi-wind icon"></i>
+                <h3>Renewable & Sustainable Energy Consulting</h3>
+                <p>
+                  From feasibility to implementation, we guide your renewable
+                  energy projects and sustainability initiatives.
+                </p>
+                <a href="#" class="read-more stretched-link"
+                ><span>Read More</span> <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <div
+                    class="col-lg-4 col-md-6"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+            >
+              <div class="service-item item-cyan position-relative">
+                <i class="bi bi-graph-down icon"></i>
+                <h3>Energy Market Analysis</h3>
+                <p>
+                  We provide comprehensive market intelligence, price
+                  forecasting, and risk assessments to support smart trading and
+                  investment decisions.
+                </p>
+                <a href="#" class="read-more stretched-link"
+                ><span>Read More</span> <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <div
+                    class="col-lg-4 col-md-6"
+                    data-aos="fade-up"
+                    data-aos-delay="400"
+            >
+              <div class="service-item item-red position-relative">
+                <i class="bi bi-chat-square-text icon"></i>
+                <h3>Consulting Services</h3>
+                <p>
+                  We provide expert guidance on market strategies, regulatory
+                  challenges and operational efficiency in the evolving energy
+                  landscape.
+                </p>
+                <a href="#" class="read-more stretched-link"
+                ><span>Read More</span> <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <ServicesModal/>
+        </div>
+
+        <script>
+        document.querySelectorAll(
+          "#our-services-cards .read-more"
+        ).forEach(function (card) {
+          card.addEventListener("click", function (e) {
+            e.preventDefault();
+            const servicesModal = new bootstrap.Modal(
+              document.getElementById("servicesModal")
+            );
+            servicesModal.show();
+          });
+        });
+        </script>

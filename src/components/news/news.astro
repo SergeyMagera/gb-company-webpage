@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content";
+import NewsCard from "./news-card.astro";
+
+const all = await getCollection("news");
+---
+
+<div class="container news-container">
+  <div class="row gy-4">
+    {
+      all.map((news) => (
+        <NewsCard
+          title={news.data.title}
+          date={news.data.date}
+          tags={news.data.tags}
+          content={news.data.excerpt}
+          image={news.data.image}
+          link={news.data.link}
+          author={news.data.author}
+        />
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .news-container {
+    padding: 80px 0 60px 0;
+  }
+</style>
